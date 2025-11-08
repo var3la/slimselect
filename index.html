@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" class="es">
+
+<head>
+
+<title>buscador</title>
+
+    <script src="https://unpkg.com/slim-select@latest/dist/slimselect.js"></script>
+    <link href="https://unpkg.com/slim-select@latest/dist/slimselect.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="styleDefault.css">
+<script src="jquery.js"></script>
+</head>
+
+<body class="hideBody">
+
+  <main>
+
+    <div class="tpl-buscadorME-eh desk">
+      <div class="sta-buscadorME-eh_max">
+        <div class="sta-buscadorME-eh_input destino select">
+          <select class="sta-ME_input hotel_destino" name="hotel_destino" id="hotel_destino" placeholder="Hotel/Destino">
+            
+          </select>
+        </div>
+        <div class="sta-buscadorME-eh_input evento select">
+          <div class="sta-ME_input" name="evento" id="evento">
+            <div class="fillInput">Tipo de Evento</div>
+            <ul class="resultsME">
+              <li>Evento Corporativo</li>
+              <li>Evento Social</li>
+            </ul>
+          </div>
+        </div>
+        <div class="sta-buscadorME-eh_input asistentes">
+          <input type="number" min="1" max="1000" class="sta-ME_input" name="asistentes" id="asistentes"
+            placeholder="Número de asistentes">
+        </div>
+        <div class="sta-buscadorME-eh_input disposicion select">
+          <div class="sta-ME_input" name="disposicion" id="disposicion">
+            <div class="fillInput">Disposición de salas</div>
+            <ul class="resultsME">
+              <li>Banquete</li>
+              <li>Cocktail</li>
+              <li>Escuela</li>
+              <li>Forma U</li>
+              <li>Imperial</li>
+              <li>Teatro</li>
+              <li>Cabaret</li>
+              <li>Cualquiera</li>
+            </ul>
+          </div>
+        </div>
+        <button class="tpl-buttonSearchME-eh_buscador">
+          <div class="sta-buttonSearchME-eh_max">
+            <div class="sta-buttonSearchME-eh_text">BUSCAR</div>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div class="tpl-resultsModuleME-eh">
+    <div class="sta-resultsModuleME-eh_max">
+    </div>
+  </div>
+  </main>
+
+
+  <script src="scriptsDefault.js"></script>
+
+</body>
+
+</html>
