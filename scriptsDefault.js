@@ -1,11 +1,3 @@
-(function (o) {
-  if (!o) return false;
-  document.addEventListener('DOMContentLoaded', function () {
-    o.classList.remove('hideBody');
-    window.dispatchEvent(new Event('showBody'));
-  });
-})(document.body);
-
 var Galeria = (function () {
   function G(param) {
     if (
@@ -481,7 +473,18 @@ var Galeria = (function () {
  */
 ((buscador) => {
   if (!buscador.length) return false;
-
+new SlimSelect({
+  select: '#evento',
+  settings: {
+    // placeholderText: 'Selecciona un tipo de evento'
+  }
+})
+new SlimSelect({
+  select: '#disposicion',
+  settings: {
+    // placeholderText: 'Selecciona una sala'
+  }
+})
 // Inicializar SlimSelect
 const select = new SlimSelect({
   select: '#hotel_destino',
@@ -555,18 +558,5 @@ async function cargarDatosAPI() {
 
 // Cargar datos al iniciar
 cargarDatosAPI()
-
-// Escuchar cambios
-select.events.afterChange = (newVal) => {
-  console.log('Valor seleccionado:', newVal)
-  
-  // Si quieres obtener todos los datos del hotel seleccionado
-  if (newVal.length > 0) {
-    const opcionSeleccionada = select.getSelected()
-    console.log('Datos completos:', opcionSeleccionada)
-  }
-}
-
-
 
 })(document.querySelectorAll('.tpl-buscadorME-eh'));

@@ -146,27 +146,6 @@ input[type="number"] {
     font: 300 17px 'Open Sans';
 }
 
-.tpl-buscadorME-eh .sta-buscadorME-eh_input.select .sta-ME_input:after {
-    content: "";
-    position: absolute;
-    right: 1em;
-    top: 1.2em;
-    border-style: solid;
-    border-color: #00263A;
-    border-image: initial;
-    border-width: 0px 2px 2px 0px;
-    pointer-events: none;
-    display: inline-block;
-    padding: 3px;
-    transform: rotate(45deg);
-    background-color: #fff;
-    transition: transform .3s;
-}
-
-.tpl-buscadorME-eh .sta-buscadorME-eh_input.select.open .sta-ME_input:after {
-    transform: rotate(225deg);
-}
-
 /**/
 /*INICIO buscadorME desk*/
 .tpl-buscadorME-eh.desk {
