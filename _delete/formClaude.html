@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Validado</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen py-8">
+  <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Formulario de Registro</h1>
+    
+    <form id="mainForm" novalidate>
+      <!-- Nombre -->
+      <div class="mb-4">
+        <label for="nombre" class="block text-gray-700 font-semibold mb-2">
+          Nombre completo <span class="text-red-500">*</span>
+        </label>
+        <input 
+          type="text" 
+          id="nombre" 
+          name="nombre" 
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          required
+          minlength="3"
+        >
+        <span class="error-message text-red-500 text-sm hidden"></span>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-4">
+        <label for="email" class="block text-gray-700 font-semibold mb-2">
+          Email <span class="text-red-500">*</span>
+        </label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          required
+        >
+        <span class="error-message text-red-500 text-sm hidden"></span>
+      </div>
+
+      <!-- Teléfono -->
+      <div class="mb-4">
+        <label for="telefono" class="block text-gray-700 font-semibold mb-2">
+          Teléfono <span class="text-red-500">*</span>
+        </label>
+        <input 
+          type="tel" 
+          id="telefono" 
+          name="telefono" 
+          pattern="[0-9]{9}"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          required
+        >
+        <span class="error-message text-red-500 text-sm hidden"></span>
+      </div>
+
+      <!-- Edad -->
+      <div class="mb-4">
+        <label for="edad" class="block text-gray-700 font-semibold mb-2">
+          Edad <span class="text-red-500">*</span>
+        </label>
+        <input 
+          type="number" 
+          id="edad" 
+          name="edad" 
+          min="18" 
+          max="100"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          required
+        >
+        <span class="error-message text-red-500 text-sm hidden"></span>
+      </div>
+
+      <!-- Género (Radio buttons) -->
+      <div class="mb-4">
+        <label class="block text-gray-700 font-semibold mb-2">
+          Género <span class="text-red-500">*</span>
+        </label>
+        <div class="flex gap-4">
+          <label class="flex items-center">
+            <input type="radio" name="genero" value="masculino" class="mr-2" required>
+            <span>Masculino</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="genero" value="femenino" class="mr-2" required>
+            <span>Femenino</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="genero" value="otro" class="mr-2" required>
+            <span>Otro</span>
+          </label>
+        </div>
+        <span class="error-message text-red-500 text-sm hidden"></span>
+      </div>
+
+      <!-- Intereses (Checkboxes) -->
+      <div class="mb-4">
+        <label class="block text-gray-700 font-semibold mb-2">
+          Intereses (selecciona al menos uno) <span class="text-red-500">*</span>
+        </label>
+        <div class="space-y-2">
+          <label class="flex items-center">
+            <input type="checkbox" name="intereses" value="deportes" class="mr-2">
+            <span>Deportes</span>
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" name="intereses" value="tecnologia" class="mr-2">
+            <span>Tecnología</span>
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" name="intereses" value="arte" class="mr-2">
+            <span>Arte</span>
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" name="intereses" value="musica" class="mr-2">
+            <span>Música</span>
+          </label>
+        </div>
+        <span class="error-message text-red-500 text-sm hidden"></span>
+      </div>
+
+      <!-- País (Select) -->
+      <div class="mb-4">
+        <label for="pais" class="block text-gray-700 font-semibold mb-2">
+          País <span class="text-red-500">*</span>
+        </label>
+        <select 
+          id="pais" 
+          name="pais" 
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          required
+        >
+          <option value="">Selecciona un país</option>
+          <option value="espana">España</option>
+          <option value="mexico">México</option>
+          <option value="argentina">Argentina</option>
+          <option value="colombia">Colombia</option>
+          <option value="chile">Chile</option>
+        </select>
+        <span class="error-message text-red-500 text-sm hidden"></span>
+      </div>
+
+      <!-- Comentarios (Textarea) -->
+      <div class="mb-4">
+        <label for="comentarios" class="block text-gray-700 font-semibold mb-2">
+          Comentarios
+        </label>
+        <textarea 
+          id="comentarios" 
+          name="comentarios" 
+          rows="4"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        ></textarea>
+      </div>
+
+      <!-- Términos y condiciones -->
+      <div class="mb-6">
+        <label class="flex items-start">
+          <input type="checkbox" id="terminos" name="terminos" class="mr-2 mt-1" required>
+          <span class="text-gray-700">
+            Acepto los términos y condiciones <span class="text-red-500">*</span>
+          </span>
+        </label>
+        <span class="error-message text-red-500 text-sm hidden"></span>
+      </div>
+
+      <!-- Botones -->
+      <div class="flex gap-4">
+        <button 
+          type="submit" 
+          class="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition duration-200"
+        >
+          Enviar
+        </button>
+        <button 
+          type="reset" 
+          class="flex-1 bg-gray-400 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-500 transition duration-200"
+        >
+          Limpiar
+        </button>
+      </div>
+    </form>
+
+    <!-- Mensaje de respuesta -->
+    <div id="responseMessage" class="mt-6 p-4 rounded-lg hidden"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('mainForm');
+    const responseMessage = document.getElementById('responseMessage');
+
+    // Mensajes de error personalizados
+    const errorMessages = {
+      valueMissing: 'Este campo es obligatorio',
+      typeMismatch: {
+        email: 'Introduce un email válido',
+        tel: 'Introduce un teléfono válido'
+      },
+      tooShort: 'El texto es demasiado corto',
+      rangeUnderflow: 'El valor es menor al mínimo permitido',
+      rangeOverflow: 'El valor es mayor al máximo permitido',
+      patternMismatch: 'El formato no es válido'
+    };
+
+    // Función para mostrar error
+    function showError(input, message) {
+      const errorSpan = input.parentElement.querySelector('.error-message');
+      errorSpan.textContent = message;
+      errorSpan.classList.remove('hidden');
+      input.classList.add('border-red-500');
+      input.classList.remove('border-gray-300');
+    }
+
+    // Función para limpiar error
+    function clearError(input) {
+      const errorSpan = input.parentElement.querySelector('.error-message');
+      errorSpan.textContent = '';
+      errorSpan.classList.add('hidden');
+      input.classList.remove('border-red-500');
+      input.classList.add('border-gray-300');
+    }
+
+    // Validar campo individual
+    function validateField(input) {
+      clearError(input);
+
+      // Validación especial para checkboxes
+      if (input.type === 'checkbox' && input.name === 'intereses') {
+        const checkboxes = form.querySelectorAll('input[name="intereses"]:checked');
+        if (checkboxes.length === 0) {
+          showError(input, 'Selecciona al menos un interés');
+          return false;
+        }
+        return true;
+      }
+
+      // Validación especial para radio buttons
+      if (input.type === 'radio') {
+        const radioGroup = form.querySelectorAll(`input[name="${input.name}"]`);
+        const checked = Array.from(radioGroup).some(radio => radio.checked);
+        if (!checked) {
+          showError(input, 'Selecciona una opción');
+          return false;
+        }
+        return true;
+      }
+
+      // Validaciones nativas
+      if (input.validity.valueMissing) {
+        showError(input, errorMessages.valueMissing);
+        return false;
+      }
+
+      if (input.validity.typeMismatch) {
+        showError(input, errorMessages.typeMismatch[input.type] || 'Formato inválido');
+        return false;
+      }
+
+      if (input.validity.tooShort) {
+        showError(input, `Mínimo ${input.minLength} caracteres`);
+        return false;
+      }
+
+      if (input.validity.rangeUnderflow) {
+        showError(input, `Valor mínimo: ${input.min}`);
+        return false;
+      }
+
+      if (input.validity.rangeOverflow) {
+        showError(input, `Valor máximo: ${input.max}`);
+        return false;
+      }
+
+      if (input.validity.patternMismatch) {
+        showError(input, input.type === 'tel' ? 'Debe tener 9 dígitos' : errorMessages.patternMismatch);
+        return false;
+      }
+
+      return true;
+    }
+
+    // Validar todos los campos
+    function validateForm() {
+      let isValid = true;
+      const inputs = form.querySelectorAll('input, select, textarea');
+      
+      inputs.forEach(input => {
+        if (input.type === 'checkbox' && input.name === 'intereses') {
+          if (!form.querySelector('input[name="intereses"]:checked')) {
+            const firstCheckbox = form.querySelector('input[name="intereses"]');
+            if (firstCheckbox && !validateField(firstCheckbox)) {
+              isValid = false;
+            }
+          }
+        } else if (input.type === 'radio') {
+          const radioGroup = form.querySelectorAll(`input[name="${input.name}"]`);
+          const checked = Array.from(radioGroup).some(radio => radio.checked);
+          if (!checked && input === radioGroup[0]) {
+            if (!validateField(input)) {
+              isValid = false;
+            }
+          }
+        } else if (input.hasAttribute('required') || input.value) {
+          if (!validateField(input)) {
+            isValid = false;
+          }
+        }
+      });
+
+      return isValid;
+    }
+
+    // Eventos de validación en tiempo real
+    form.addEventListener('blur', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') {
+        validateField(e.target);
+      }
+    }, true);
+
+    form.addEventListener('change', (e) => {
+      if (e.target.type === 'checkbox' || e.target.type === 'radio') {
+        validateField(e.target);
+      }
+    });
+
+    // Envío del formulario
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!validateForm()) {
+        showResponseMessage('Por favor, corrige los errores del formulario', 'error');
+        return;
+      }
+
+      // Recopilar datos del formulario
+      const formData = new FormData(form);
+      const data = {};
+
+      // Convertir FormData a objeto
+      for (let [key, value] of formData.entries()) {
+        if (key === 'intereses') {
+          if (!data.intereses) data.intereses = [];
+          data.intereses.push(value);
+        } else {
+          data[key] = value;
+        }
+      }
+
+      try {
+        // Simular envío AJAX (cambiar URL por tu endpoint)
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          console.log('Respuesta del servidor:', result);
+          showResponseMessage('¡Formulario enviado correctamente!', 'success');
+          form.reset();
+        } else {
+          throw new Error('Error en el envío');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        showResponseMessage('Error al enviar el formulario. Intenta de nuevo.', 'error');
+      }
+    });
+
+    // Mostrar mensaje de respuesta
+    function showResponseMessage(message, type) {
+      responseMessage.textContent = message;
+      responseMessage.classList.remove('hidden', 'bg-green-100', 'text-green-700', 'bg-red-100', 'text-red-700');
+      
+      if (type === 'success') {
+        responseMessage.classList.add('bg-green-100', 'text-green-700');
+      } else {
+        responseMessage.classList.add('bg-red-100', 'text-red-700');
+      }
+
+      setTimeout(() => {
+        responseMessage.classList.add('hidden');
+      }, 5000);
+    }
+
+    // Limpiar mensajes al resetear
+    form.addEventListener('reset', () => {
+      const inputs = form.querySelectorAll('input, select, textarea');
+      inputs.forEach(clearError);
+      responseMessage.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
